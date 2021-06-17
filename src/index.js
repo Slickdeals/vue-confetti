@@ -3,11 +3,11 @@ import Confetti from './confetti';
 export { Confetti };
 
 export default {
-  install(Vue, options) {
+  install(app) {
     if (this.installed) {
       return;
     }
     this.installed = true;
-    Vue.prototype.$confetti = new Confetti(options); // eslint-disable-line no-param-reassign
+    app.config.globalProperties.$confetti = new Confetti(); // eslint-disable-line no-param-reassign
   },
 };
